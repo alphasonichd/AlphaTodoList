@@ -10,7 +10,6 @@ import RealmSwift
 import ChameleonFramework
 
 class CategoryViewController: SwipeTableViewController {
-    
     let realm = try! Realm()
     var categoryArray: Results<Category>?
     
@@ -77,7 +76,6 @@ class CategoryViewController: SwipeTableViewController {
 //MARK: - TableView Data Source and Delegate Methods
 
 extension CategoryViewController {
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryArray?.count ?? 1
     }

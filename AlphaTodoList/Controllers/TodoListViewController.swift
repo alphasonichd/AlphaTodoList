@@ -10,7 +10,6 @@ import RealmSwift
 import ChameleonFramework
 
 class TodoListViewController: SwipeTableViewController {
-    
     let realm = try! Realm()
     var todoItems: Results<Item>?
     
@@ -145,7 +144,6 @@ extension TodoListViewController {
 //MARK: - Search Bar Methods
 
 extension TodoListViewController: UISearchBarDelegate {
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text ?? "").sorted(byKeyPath: "dateCreated", ascending: true)
         tableView.reloadData()
